@@ -152,6 +152,7 @@ CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
     'https://lms-api-8icl.onrender.com',
     'https://dpg-css06o23esus739g6mhg-a.oregon-postgres.render.com',
+    'https://216.24.57.4'
 ]
 
 CORS_ALLOW_ALL_ORIGINS = True
