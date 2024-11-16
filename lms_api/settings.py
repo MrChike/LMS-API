@@ -96,10 +96,10 @@ WSGI_APPLICATION = 'lms_api.wsgi.application'
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "eth2",
-        "USER": "postgres",
-        "PASSWORD": "kidazda20",
-        "HOST": "127.0.0.1",
+        "NAME": "render_projects_tdbs",
+        "USER": "render_projects_tdbs_user",
+        "PASSWORD": "33tiGDkQE3SZUZExdH1BfJEUUKfTi1Em",
+        "HOST": "dpg-css06o23esus739g6mhg-a",
         "PORT": "5432",
     }
 }
