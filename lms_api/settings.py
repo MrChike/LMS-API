@@ -162,7 +162,7 @@ import os
 
 # Load environment variables for CORS settings
 CORS_ALLOWED_ORIGINS = os.getenv('CORS_ALLOWED_ORIGINS').split(',')
-print('check if env works', CORS_ALLOW_ALL_ORIGINS)
+print('check if env works', CORS_ALLOWED_ORIGINS)
 CORS_ALLOWED_ORIGINS_REGEX = os.getenv('CORS_ALLOWED_ORIGINS_REGEX')
 CORS_ALLOW_HEADERS = os.getenv('CORS_ALLOW_HEADERS').split(',')
 CORS_ALLOW_METHODS = os.getenv('CORS_ALLOW_METHODS').split(',')
