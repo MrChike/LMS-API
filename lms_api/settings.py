@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 from dotenv import load_dotenv
+import os
 load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -22,13 +23,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-rp7b47f+wb=4-v1_iea_0k8b+)mez^&@r82gfr#i3(#kd53(=v'
+SECRET_KEY = os.getenv('SECRET_KEY')
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-
 
 # Application definition
 
@@ -98,11 +99,11 @@ WSGI_APPLICATION = 'lms_api.wsgi.application'
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "render_projects_tdbs",
-        "USER": "render_projects_tdbs_user",
-        "PASSWORD": "33tiGDkQE3SZUZExdH1BfJEUUKfTi1Em",
-        "HOST": "dpg-css06o23esus739g6mhg-a.oregon-postgres.render.com",
-        "PORT": "5432",
+        "NAME": os.getenv('DATABASE_NAME'),
+        "USER": os.getenv('DATABASE_USER'),
+        "PASSWORD": os.getenv('DATABASE_PASSWORD'),
+        "HOST": os.getenv('DATABASE_HOST'),
+        "PORT": os.getenv('DATABASE_PORT'),
     }
 }
 
@@ -153,30 +154,15 @@ AUTH_USER_MODEL = 'account.Profile'
 
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_CREDENTIALS = True
-CORS_ALLOW_HEADERS = [
-    'content-type',
-    'Authorization',
-    'X-Requested-With',
-    'X-CSRFToken',
-]
-
-CORS_ALLOW_METHODS = [
-    'GET',
-    'POST',
-    'PUT',
-    'DELETE',
-    'OPTIONS',
-]
-
-CORS_ALLOWED_ORIGINS_REGEX = r'^https://.*\.onrender\.com$'
-
-CORS_ALLOWED_ORIGINS = [
-    'http://localhost:3000',
-    'https://lms-api-8icl.onrender.com',
-    'https://dpg-css06o23esus739g6mhg-a.oregon-postgres.render.com',
-    'https://216.24.57.4'
-]
-
 CORS_ORIGIN_WHITELIST = [
     'https://lms-api-8icl.onrender.com',
 ]
+
+import os
+
+# Load environment variables for CORS settings
+CORS_ALLOWED_ORIGINS = os.getenv('CORS_ALLOWED_ORIGINS').split(',')
+CORS_ALLOWED_ORIGINS_REGEX = os.getenv('CORS_ALLOWED_ORIGINS_REGEX')
+CORS_ALLOW_HEADERS = os.getenv('CORS_ALLOW_HEADERS').split(',')
+CORS_ALLOW_METHODS = os.getenv('CORS_ALLOW_METHODS').split(',')
+ORS_ORIGIN_WHITELIST = os.getenv('CORS_ORIGIN_WHITELIST').split(',')
