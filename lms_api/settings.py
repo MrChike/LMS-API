@@ -99,7 +99,7 @@ DATABASES = {
         "NAME": "render_projects_tdbs",
         "USER": "render_projects_tdbs_user",
         "PASSWORD": "33tiGDkQE3SZUZExdH1BfJEUUKfTi1Em",
-        "HOST": "dpg-css06o23esus739g6mhg-a",
+        "HOST": "dpg-css06o23esus739g6mhg-a.oregon-postgres.render.com",
         "PORT": "5432",
     }
 }
