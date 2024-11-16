@@ -150,6 +150,7 @@ AUTH_USER_MODEL = 'account.Profile'
 
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
+    'https://lms-api-8icl.onrender.com',
 ]
 
 CORS_ALLOW_ALL_ORIGINS = True
