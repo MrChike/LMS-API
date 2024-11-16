@@ -151,6 +151,7 @@ AUTH_USER_MODEL = 'account.Profile'
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
     'https://lms-api-8icl.onrender.com',
+    'https://dpg-css06o23esus739g6mhg-a.oregon-postgres.render.com',
 ]
 
 CORS_ALLOW_ALL_ORIGINS = True
