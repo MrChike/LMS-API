@@ -90,12 +90,6 @@ WSGI_APPLICATION = 'lms_api.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
 
 DATABASES = {
     "default": {
@@ -155,16 +149,11 @@ AUTH_USER_MODEL = 'account.Profile'
 
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_CREDENTIALS = True
-CORS_ORIGIN_WHITELIST = [
-    'https://lms-api-8icl.onrender.com',
-]
 
 import os
 
 # Load environment variables for CORS settings
 CORS_ALLOWED_ORIGINS = os.getenv('CORS_ALLOWED_ORIGINS').split(',')
-print('check if env works', CORS_ALLOWED_ORIGINS)
-CORS_ALLOWED_ORIGINS_REGEX = os.getenv('CORS_ALLOWED_ORIGINS_REGEX')
 CORS_ALLOW_HEADERS = os.getenv('CORS_ALLOW_HEADERS').split(',')
 CORS_ALLOW_METHODS = os.getenv('CORS_ALLOW_METHODS').split(',')
 ORS_ORIGIN_WHITELIST = os.getenv('CORS_ORIGIN_WHITELIST').split(',')
